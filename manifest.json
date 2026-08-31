@@ -1,0 +1,9 @@
+{
+  "name": "VNO Reformas Multiservicios",
+  "short_name": "VNO",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0b0b0b",
+  "theme_color": "#e10600",
+  "lang": "es"
+}
