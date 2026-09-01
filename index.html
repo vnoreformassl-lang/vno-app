@@ -6,67 +6,308 @@
 <meta name="theme-color" content="#e10600">
 <title>VNO Reformas Multiservicios</title>
 <link rel="manifest" href="manifest.json">
+
 <style>
-*{box-sizing:border-box}body{margin:0;background:#090909;color:#fff;font-family:Arial,sans-serif}
-.app{max-width:480px;min-height:100vh;margin:auto;background:#111}
-header{padding:22px;text-align:center;border-bottom:1px solid #292929}
-.logo{font-size:44px;font-weight:900;letter-spacing:-3px}.logo span{color:#e10600}
-.sub{font-size:12px;letter-spacing:2px;color:#ccc}
-.screen{padding:24px 20px}.back{color:#fff;background:none;border:0;font-size:15px;padding:0;margin-bottom:18px}
-h1{font-size:27px;margin:0 0 8px}.intro{color:#aaa;margin:0 0 22px}
-label{display:block;font-weight:700;margin:17px 0 8px}
-.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.option{background:#1d1d1d;border:1px solid #333;color:#fff;border-radius:12px;padding:14px;text-align:left}
-.option.selected{border:2px solid #e10600;background:#241010}
-input,textarea{width:100%;background:#1d1d1d;border:1px solid #444;border-radius:11px;padding:14px;color:#fff;font-size:16px}
-textarea{min-height:100px;resize:vertical}
-.photo{border:2px dashed #555;border-radius:12px;padding:20px;text-align:center;color:#aaa}
-.btn{width:100%;border:0;border-radius:12px;padding:16px;margin-top:22px;background:#e10600;color:#fff;font-size:17px;font-weight:800}
-.note{font-size:12px;color:#777;text-align:center;margin-top:14px}
-footer{text-align:center;color:#666;padding:20px}
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:#0d0d0d;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+.app{
+  max-width:480px;
+  min-height:100vh;
+  margin:auto;
+  background:#111;
+}
+
+header{
+  padding:25px 20px;
+  text-align:center;
+  border-bottom:1px solid #333;
+  background:#0d0d0d;
+}
+
+.logo{
+  font-size:48px;
+  font-weight:900;
+  letter-spacing:-3px;
+}
+
+.logo span{
+  color:#e10600;
+}
+
+.sub{
+  margin-top:5px;
+  font-size:13px;
+  letter-spacing:3px;
+  color:#ccc;
+}
+
+.screen{
+  padding:24px 20px 35px;
+}
+
+.back{
+  background:none;
+  border:0;
+  color:#ccc;
+  font-size:17px;
+  padding:0;
+  margin-bottom:28px;
+}
+
+h1{
+  font-size:30px;
+  margin:0 0 8px;
+}
+
+.intro{
+  color:#aaa;
+  font-size:17px;
+  line-height:1.5;
+  margin-bottom:30px;
+}
+
+label{
+  display:block;
+  font-weight:700;
+  font-size:17px;
+  margin:20px 0 10px;
+}
+
+.options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.option{
+  background:#1d1d1d;
+  color:#fff;
+  border:1px solid #333;
+  border-radius:14px;
+  padding:17px 10px;
+  font-size:16px;
+  text-align:left;
+  cursor:pointer;
+}
+
+.option.selected{
+  border:2px solid #e10600;
+  background:#261010;
+}
+
+input,textarea{
+  width:100%;
+  background:#1d1d1d;
+  color:#fff;
+  border:1px solid #444;
+  border-radius:12px;
+  padding:15px;
+  font-size:16px;
+  outline:none;
+}
+
+input:focus,textarea:focus{
+  border-color:#e10600;
+}
+
+textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.photo{
+  border:2px dashed #555;
+  border-radius:14px;
+  padding:22px 12px;
+  text-align:center;
+  color:#bbb;
+  cursor:pointer;
+  background:#151515;
+}
+
+.photo input{
+  display:none;
+}
+
+#photoText{
+  font-size:16px;
+}
+
+.btn{
+  width:100%;
+  border:0;
+  border-radius:13px;
+  padding:17px;
+  margin-top:25px;
+  background:#e10600;
+  color:#fff;
+  font-size:18px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.btn:active{
+  transform:scale(.98);
+}
+
+.note{
+  font-size:12px;
+  color:#777;
+  text-align:center;
+  margin-top:15px;
+  line-height:1.5;
+}
+
+footer{
+  text-align:center;
+  color:#666;
+  padding:20px;
+  border-top:1px solid #222;
+  font-size:13px;
+}
 </style>
 </head>
+
 <body>
+
 <main class="app">
-<header><div class="logo"><span>V</span>NO</div><div class="sub">REFORMAS MULTISERVICIOS</div></header>
+
+<header>
+  <div class="logo"><span>V</span>NO</div>
+  <div class="sub">REFORMAS MULTISERVICIOS</div>
+</header>
+
 <section class="screen">
-<button class="back" onclick="location.reload()">← Volver</button>
+
+<button class="back" onclick="history.back()">← Volver</button>
+
 <h1>Solicitar presupuesto</h1>
-<p class="intro">Cuéntanos qué necesitas y nos pondremos en contacto contigo.</p>
+
+<p class="intro">
+Cuéntanos qué necesitas y nos pondremos en contacto contigo.
+</p>
 
 <label>Tipo de trabajo</label>
+
 <div class="options">
+
 <button class="option" onclick="sel(this)">🔧 Fontanería</button>
 <button class="option" onclick="sel(this)">🧱 Albañilería</button>
 <button class="option" onclick="sel(this)">🎨 Pintura</button>
 <button class="option" onclick="sel(this)">⚡ Electricidad</button>
 <button class="option" onclick="sel(this)">🏠 Reforma</button>
 <button class="option" onclick="sel(this)">🔨 Otro</button>
+
 </div>
 
 <label>Describe el trabajo</label>
-<textarea placeholder="Explícanos brevemente qué necesitas..."></textarea>
+
+<textarea id="descripcion"
+placeholder="Explícanos brevemente qué necesitas..."></textarea>
 
 <label>Fotos del trabajo</label>
-<div class="photo">📸 Pulsa aquí para añadir fotos</div>
+
+<label class="photo">
+  <input type="file" accept="image/*" multiple onchange="fotos(this)">
+  <span id="photoText">📸 Pulsa aquí para añadir fotos</span>
+</label>
 
 <label>Nombre</label>
-<input placeholder="Tu nombre">
+
+<input id="nombre" placeholder="Tu nombre">
 
 <label>Teléfono</label>
-<input type="tel" placeholder="Tu teléfono">
+
+<input id="telefono" type="tel" placeholder="Tu teléfono">
 
 <label>Dirección</label>
-<input placeholder="Dirección del trabajo">
 
-<button class="btn" onclick="enviar()">ENVIAR SOLICITUD</button>
-<div class="note">En el siguiente paso conectaremos este botón para que la solicitud nos llegue de verdad.</div>
+<input id="direccion" placeholder="Dirección del trabajo">
+
+<button class="btn" onclick="enviar()">
+ENVIAR SOLICITUD
+</button>
+
+<div class="note">
+Nos pondremos en contacto contigo para confirmar los detalles del trabajo.
+</div>
+
 </section>
-<footer>VNO Reformas Multiservicios</footer>
+
+<footer>
+VNO Reformas Multiservicios
+</footer>
+
 </main>
+
 <script>
-function sel(el){document.querySelectorAll('.option').forEach(x=>x.classList.remove('selected'));el.classList.add('selected')}
-function enviar(){alert('¡Perfecto! La solicitud está preparada. Ahora conectaremos el envío para que llegue a VNO.')}
+
+let trabajo="";
+
+function sel(el){
+
+  document.querySelectorAll(".option").forEach(b=>{
+    b.classList.remove("selected");
+  });
+
+  el.classList.add("selected");
+  trabajo=el.textContent.trim();
+}
+
+function fotos(input){
+
+  if(input.files.length===0){
+    document.getElementById("photoText").textContent=
+    "📸 Pulsa aquí para añadir fotos";
+    return;
+  }
+
+  document.getElementById("photoText").textContent=
+  "📸 "+input.files.length+" foto(s) seleccionada(s)";
+}
+
+function enviar(){
+
+  const nombre=document.getElementById("nombre").value.trim();
+  const telefono=document.getElementById("telefono").value.trim();
+  const descripcion=document.getElementById("descripcion").value.trim();
+  const direccion=document.getElementById("direccion").value.trim();
+
+  if(!trabajo){
+    alert("Selecciona el tipo de trabajo.");
+    return;
+  }
+
+  if(!nombre){
+    alert("Escribe tu nombre.");
+    return;
+  }
+
+  if(!telefono){
+    alert("Escribe tu teléfono.");
+    return;
+  }
+
+  if(!descripcion){
+    alert("Describe brevemente el trabajo.");
+    return;
+  }
+
+  alert(
+    "¡Solicitud preparada!\\n\\n"+
+    "Gracias, "+nombre+".\\n"+
+    "Nos pondremos en contacto contigo."
+  );
+}
+
 </script>
+
 </body>
 </html>
