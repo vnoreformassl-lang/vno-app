@@ -271,9 +271,9 @@ function fotos(input){
 
   document.getElementById("photoText").textContent=
   "📸 "+input.files.length+" foto(s) seleccionada(s)";
-}
 
-function enviar(){
+
+  function enviar(){
 
   const nombre=document.getElementById("nombre").value.trim();
   const telefono=document.getElementById("telefono").value.trim();
@@ -300,12 +300,26 @@ function enviar(){
     return;
   }
 
-  alert(
-    "¡Solicitud preparada!\\n\\n"+
-    "Gracias, "+nombre+".\\n"+
-    "Nos pondremos en contacto contigo."
+  const mensaje =
+    "🔴 NUEVA SOLICITUD VNO\n\n" +
+    "🛠️ Trabajo: " + trabajo + "\n" +
+    "👤 Nombre: " + nombre + "\n" +
+    "📞 Teléfono: " + telefono + "\n" +
+    "📍 Dirección: " + direccion + "\n" +
+    "📝 Descripción: " + descripcion;
+
+  window.open(
+    "https://wa.me/34687655923?text=" + encodeURIComponent(mensaje),
+    "_blank"
   );
-}
+  alert(
+  "¡Solicitud preparada!\n\n"+
+  "Gracias, "+nombre+".\n"+
+  "Nos pondremos en contacto contigo."
+);
+  }    
+    
+    
 
 </script>
 
