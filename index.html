@@ -308,15 +308,12 @@ function fotos(input){
     "📍 Dirección: " + direccion + "\n" +
     "📝 Descripción: " + descripcion;
 
-  window.open(
-    "https://wa.me/34687655923?text=" + encodeURIComponent(mensaje),
-    "_blank"
-  );
-  alert(
-  "¡Solicitud preparada!\n\n"+
-  "Gracias, "+nombre+".\n"+
-  "Nos pondremos en contacto contigo."
-);
+  window.location.href =
+"https://wa.me/34687655923?text=" + encodeURIComponent(mensaje);
+    
+    
+  
+  
   }    
     
     
