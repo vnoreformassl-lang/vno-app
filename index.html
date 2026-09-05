@@ -325,12 +325,189 @@ border-top:1px solid #222;
 color:#777;
 padding:24px;
 }
+  * ===== PORTADA VNO ===== */
+
+.landing{
+display:block;
+background:#050505;
+}
+
+.landing-photo{
+min-height:620px;
+background-image:
+linear-gradient(to bottom,rgba(0,0,0,.25),rgba(0,0,0,.92)),
+url("Screenshot_20260905_204136_Gallery.jpg");
+background-size:cover;
+background-position:center;
+position:relative;
+}
+
+.landing-overlay{
+min-height:620px;
+padding:35px 22px 30px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.landing-logo{
+font-size:58px;
+font-weight:900;
+letter-spacing:-4px;
+text-shadow:0 3px 12px #000;
+}
+
+.landing-logo span{
+color:#e10600;
+}
+
+.landing-sub{
+font-size:11px;
+font-weight:800;
+letter-spacing:3px;
+color:#fff;
+margin-top:-15px;
+}
+
+.landing-content{
+margin-top:auto;
+}
+
+.landing-small{
+font-size:12px;
+font-weight:800;
+letter-spacing:2px;
+color:#fff;
+margin-bottom:12px;
+}
+
+.landing-content h2{
+font-size:36px;
+line-height:1.02;
+margin:0 0 12px;
+font-weight:900;
+text-shadow:0 3px 10px #000;
+}
+
+.landing-content h2 span{
+color:#e10600;
+}
+
+.landing-content p{
+font-size:15px;
+color:#eee;
+margin:0 0 24px;
+}
+
+.landing-btn{
+width:100%;
+border:0;
+border-radius:16px;
+padding:19px;
+background:#e10600;
+color:#fff;
+font-size:17px;
+font-weight:900;
+letter-spacing:.5px;
+box-shadow:0 8px 25px rgba(225,6,0,.45);
+}
+
+.landing-services{
+padding:25px 18px 30px;
+background:#090909;
+}
+
+.landing-title{
+text-align:center;
+font-size:14px;
+font-weight:900;
+letter-spacing:2px;
+margin-bottom:18px;
+}
+
+.landing-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.landing-grid div{
+background:#171717;
+border:1px solid #292929;
+border-radius:14px;
+padding:18px 10px;
+text-align:center;
+font-size:25px;
+}
+
+.landing-grid strong{
+display:block;
+font-size:13px;
+margin-top:8px;
+color:#fff;
+}
+
+/* Ocultar el formulario mientras estamos en la portada */
+
+.app:not(.servicio) .landing + header,
+.app:not(.servicio) .landing + header + .screen,
+.app:not(.servicio) .landing + header + .screen + footer{
+display:none;
+}
+
+.app.servicio .landing{
+display:none;
+}
   </style>
 </head>
 
 <body>
 
 <main class="app">
+  <div class="landing" id="landing">
+
+<div class="landing-photo">
+<div class="landing-overlay">
+
+<div class="landing-logo">
+<span>V</span>NO
+</div>
+
+<div class="landing-sub">REFORMAS MULTISERVICIOS</div>
+
+<div class="landing-content">
+
+<div class="landing-small">CÓRDOBA Y ALREDEDORES</div>
+
+<h2>TU HOGAR<br><span>EN BUENAS MANOS</span></h2>
+
+<p>Reformas · Reparaciones · Mantenimiento</p>
+
+<button class="landing-btn" onclick="abrirServicio()">
+SOLICITAR SERVICIO →
+</button>
+
+</div>
+</div>
+</div>
+
+<div class="landing-services">
+
+<div class="landing-title">NUESTROS SERVICIOS</div>
+
+<div class="landing-grid">
+
+<div>🔧<strong>Fontanería</strong></div>
+<div>🧱<strong>Albañilería</strong></div>
+<div>⚡<strong>Electricidad</strong></div>
+<div>🎨<strong>Pintura</strong></div>
+<div>🏠<strong>Reformas</strong></div>
+<div>🚨<strong>Urgencias 24H</strong></div>
+
+</div>
+</div>
+
+  </div>
 
 <header>
   <div class="logo"><span>V</span>NO</div>
