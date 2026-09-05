@@ -458,6 +458,88 @@ display:none;
 .app.servicio .landing{
 display:none;
 }
+  /* ===== ACABADO PREMIUM VNO ===== */
+
+.landing-btn{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  background:linear-gradient(135deg,#ff1a12,#d90000);
+  box-shadow:
+    0 12px 30px rgba(225,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.25);
+  border-radius:18px;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:.5px;
+  min-height:64px;
+  transition:transform .2s,box-shadow .2s;
+}
+
+.landing-btn:active{
+  transform:scale(.97);
+  box-shadow:0 6px 18px rgba(225,0,0,.25);
+}
+
+.landing-services{
+  padding:34px 20px 45px;
+  background:#080808;
+}
+
+.landing-services h3{
+  margin:0 0 22px;
+  text-align:center;
+  font-size:17px;
+  letter-spacing:4px;
+  color:#fff;
+}
+
+.landing-grid{
+  gap:14px;
+}
+
+.landing-grid > div{
+  position:relative;
+  background:linear-gradient(145deg,#1b1b1b,#101010);
+  border:1px solid #292929;
+  border-radius:20px;
+  padding:25px 12px;
+  min-height:120px;
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04);
+  transition:transform .2s,border-color .2s;
+}
+
+.landing-grid > div:active{
+  transform:scale(.97);
+  border-color:#e10600;
+}
+
+.landing-grid > div::after{
+  content:"";
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:0;
+  height:3px;
+  background:#e10600;
+  border-radius:3px 3px 0 0;
+  opacity:.8;
+}
+
+.landing-grid strong{
+  margin-top:10px;
+  font-size:15px;
+  letter-spacing:.3px;
+}
+
+.landing-grid div:first-child{
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.04),
+    0 0 0 1px rgba(225,0,0,.08);
+}
   </style>
 </head>
 
