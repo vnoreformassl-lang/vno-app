@@ -579,12 +579,12 @@ SOLICITAR SERVICIO →
 
 <div class="landing-grid">
 
-<div>🔧<strong>Fontanería</strong></div>
-<div>🧱<strong>Albañilería</strong></div>
-<div>⚡<strong>Electricidad</strong></div>
-<div>🎨<strong>Pintura</strong></div>
-<div>🏠<strong>Reformas</strong></div>
-<div>🚨<strong>Urgencias 24H</strong></div>
+<div onclick="abrirTarifas('Fontanería')">🔧<strong>Fontanería</strong></div>
+<div onclick="abrirTarifas('Albañilería')">🧱<strong>Albañilería</strong></div>
+<div onclick="abrirTarifas('Electricidad')">⚡<strong>Electricidad</strong></div>
+<div onclick="abrirTarifas('Pintura')">🎨<strong>Pintura</strong></div>
+<div onclick="abrirTarifas('Reformas')">🏠<strong>Reformas</strong></div>
+<div onclick="abrirTarifas('Urgencias 24H')">🚨<strong>Urgencias 24H</strong></div>
 
 </div>
 </div>
@@ -736,7 +736,129 @@ if (archivos.length > 0 && navigator.share && navigator.canShare && navigator.ca
     
   
   
-  }    
+  }   
+  const tarifas = {
+  "Fontanería": [
+    ["Desatasco de fregadero","Desde 60 €"],
+    ["Desatasco de lavabo","Desde 60 €"],
+    ["Desatasco de inodoro","Desde 70 €"],
+    ["Cambio de grifo","Desde 50 €"],
+    ["Cambio de llave de corte","Desde 50 €"],
+    ["Reparación de fuga","Desde 70 €"],
+    ["Cambio de sifón","Desde 45 €"],
+    ["Instalación de termo eléctrico","Desde 120 €"]
+  ],
+  "Albañilería": [
+    ["Reparación de pared","Desde 60 €"],
+    ["Reparación de grietas","Desde 70 €"],
+    ["Colocación de azulejos","Desde 80 €"],
+    ["Reparación de solería","Desde 70 €"],
+    ["Picado y reposición","Desde 90 €"]
+  ],
+  "Electricidad": [
+    ["Cambio de enchufe","Desde 35 €"],
+    ["Cambio de interruptor","Desde 35 €"],
+    ["Instalación de punto de luz","Desde 50 €"],
+    ["Cambio de automático","Desde 60 €"],
+    ["Reparación de avería eléctrica","Desde 70 €"]
+  ],
+  "Pintura": [
+    ["Pintar habitación","Desde 150 €"],
+    ["Pintar salón","Desde 180 €"],
+    ["Pintar vivienda","Desde 500 €"],
+    ["Pintura de techos","Desde 120 €"],
+    ["Retoques y pequeñas reparaciones","Desde 60 €"]
+  ],
+  "Reformas": [
+    ["Reforma de baño","Consultar"],
+    ["Reforma de cocina","Consultar"],
+    ["Reforma integral","Consultar"],
+    ["Cambio de suelo","Consultar"],
+    ["Mantenimiento de vivienda","Consultar"]
+  ],
+  "Urgencias 24H": [
+    ["Urgencia de fontanería","Desde 90 €"],
+    ["Fuga de agua","Desde 90 €"],
+    ["Desatasco urgente","Desde 100 €"],
+    ["Urgencia eléctrica","Desde 90 €"],
+    ["Avería urgente en vivienda","Consultar"]
+  ]
+};
+
+function abrirTarifas(nombre) {
+  const lista = tarifas[nombre];
+  if (!lista) return;
+
+  const pantalla = document.createElement("div");
+  pantalla.style.cssText =
+    "position:fixed;inset:0;z-index:9999;overflow:auto;" +
+    "background:#0b0b0b;color:#fff;padding:25px 18px 40px;" +
+    "font-family:Arial,Helvetica,sans-serif;";
+
+  pantalla.innerHTML = `
+    <button onclick="this.parentElement.remove()"
+      style="background:none;border:0;color:#aaa;font-size:17px;margin-bottom:20px;">
+      ← Volver
+    </button>
+
+    <div style="text-align:center;margin-bottom:25px;">
+      <div style="font-size:12px;letter-spacing:3px;font-weight:800;">
+        VNO REFORMAS MULTISERVICIOS
+      </div>
+      <h1 style="font-size:30px;margin:12px 0 8px;">
+        ${nombre}
+      </h1>
+      <p style="color:#999;margin:0;">
+        Tarifas orientativas · Córdoba y alrededores
+      </p>
+    </div>
+
+    ${lista.map(item => `
+      <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        gap:12px;
+        background:linear-gradient(145deg,#1b1b1b,#101010);
+        border:1px solid #292929;
+        border-radius:16px;
+        padding:16px;
+        margin-bottom:10px;">
+        <strong style="font-size:15px;">${item[0]}</strong>
+        <span style="font-weight:900;white-space:nowrap;">${item[1]}</span>
+      </div>
+    `).join("")}
+
+    <div style="
+      margin-top:22px;
+      padding:16px;
+      border-radius:15px;
+      background:#151515;
+      color:#999;
+      font-size:13px;
+      line-height:1.5;">
+      ℹ️ Los precios son orientativos. El importe final puede variar
+      según materiales, dificultad, accesibilidad, desplazamiento y
+      horario. Para trabajos de mayor entidad se realizará presupuesto.
+    </div>
+
+    <button onclick="this.parentElement.remove();abrirServicio()"
+      style="
+        width:100%;
+        border:0;
+        border-radius:16px;
+        padding:18px;
+        margin-top:20px;
+        background:#e10600;
+        color:#fff;
+        font-size:17px;
+        font-weight:900;">
+      SOLICITAR ESTE SERVICIO →
+    </button>
+  `;
+
+  document.body.appendChild(pantalla);
+}
     
     
 
