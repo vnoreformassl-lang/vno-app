@@ -861,7 +861,27 @@ function abrirTarifas(nombre) {
 }
     
     
+function abrirServicio(){
+  const app = document.querySelector(".app");
 
+  if (app) {
+    app.classList.add("servicio");
+  }
+
+  const landing = document.querySelector(".landing");
+  const header = document.querySelector("header");
+  const screen = document.querySelector(".screen");
+  const footer = document.querySelector("footer");
+
+  if (landing) landing.style.display = "none";
+  if (header) header.style.display = "";
+  if (screen) screen.style.display = "";
+  if (footer) footer.style.display = "";
+
+  window.scrollTo(0, 0);
+}
+
+</script>
 </script>
 
 </body>
