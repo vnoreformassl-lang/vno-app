@@ -747,58 +747,388 @@ SOLICITAR SERVICIO →
 
 <button class="back" onclick="history.back()">← Volver</button>
 
-<h1>Solicitar presupuesto</h1>
+<div style="
+background:linear-gradient(135deg,#111,#050505);
+border-radius:22px;
+padding:18px;
+margin-bottom:22px;
+border:1px solid #292929;
+box-shadow:0 10px 30px rgba(0,0,0,.35);
+">
 
-<p class="intro">
-Cuéntanos qué necesitas y nos pondremos en contacto contigo.
-</p>
+<div style="
+display:flex;
+align-items:center;
+gap:15px;
+">
 
-<label>Tipo de trabajo</label>
+<div style="
+font-size:42px;
+font-weight:900;
+color:#e10600;
+letter-spacing:-4px;
+">
+VNO
+</div>
+
+<div>
+<div style="
+font-size:12px;
+font-weight:900;
+letter-spacing:2px;
+color:#fff;
+">
+REFORMAS MULTISERVICIOS
+</div>
+
+<div style="
+font-size:12px;
+color:#aaa;
+margin-top:5px;
+">
+📍 Córdoba y alrededores
+</div>
+</div>
+
+</div>
+
+<div style="
+height:1px;
+background:#333;
+margin:16px 0;
+"></div>
+
+<div style="
+font-size:28px;
+font-weight:900;
+line-height:1.1;
+">
+Solicitar <span style="color:#e10600;">presupuesto</span>
+</div>
+
+<div style="
+color:#aaa;
+font-size:15px;
+line-height:1.5;
+margin-top:8px;
+">
+Cuéntanos qué necesitas y nos pondremos en contacto contigo lo antes posible.
+</div>
+
+</div>
+
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+margin:20px 0 12px;
+">
+
+<div style="
+background:#e10600;
+color:white;
+width:32px;
+height:32px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+">
+1
+</div>
+
+<label style="margin:0;font-size:18px;font-weight:900;">
+TIPO DE TRABAJO
+</label>
+
+</div>
+
 
 <div class="options">
 
-<button type="button" class="option" onclick="sel(this)">🔧 Fontanería</button>
-<button type="button" class="option" onclick="sel(this)">🧱 Albañilería</button>
-<button type="button" class="option" onclick="sel(this)">🎨 Pintura</button>
-<button type="button" class="option" onclick="sel(this)">⚡ Electricidad</button>
-<button type="button" class="option" onclick="sel(this)">🏠 Reformas</button>
-<button type="button" class="option" onclick="sel(this)">🔨 Otros</button>
+<button type="button" class="option" onclick="sel(this)">
+🔧 Fontanería
+</button>
+
+<button type="button" class="option" onclick="sel(this)">
+🧱 Albañilería
+</button>
+
+<button type="button" class="option" onclick="sel(this)">
+🎨 Pintura
+</button>
+
+<button type="button" class="option" onclick="sel(this)">
+⚡ Electricidad
+</button>
+
+<button type="button" class="option" onclick="sel(this)">
+🏠 Reformas
+</button>
+
+<button type="button" class="option" onclick="sel(this)">
+🔨 Otros
+</button>
 
 </div>
 
-<label>Describe el trabajo</label>
 
-<textarea id="descripcion"
-placeholder="Explícanos brevemente qué necesitas..."></textarea>
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+margin:25px 0 12px;
+">
 
-<label>Fotos del trabajo</label>
+<div style="
+background:#e10600;
+color:white;
+width:32px;
+height:32px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+">
+2
+</div>
 
-<label class="photo">
-  <input type="file" id="fotosInput" accept="image/*" multiple onchange="fotos(this)">
-  <span id="photoText">📸 Pulsa aquí para añadir fotos</span>
+<label style="margin:0;font-size:18px;font-weight:900;">
+DESCRIBE EL TRABAJO
 </label>
 
-<label>Nombre</label>
+</div>
 
-<input id="nombre" placeholder="Tu nombre">
 
-<label>Teléfono</label>
+<textarea
+id="descripcion"
+maxlength="500"
+placeholder="Explícanos brevemente qué necesitas...
+Cuantos más detalles, mejor podremos ayudarte."
+style="
+width:100%;
+min-height:130px;
+box-sizing:border-box;
+background:#151719;
+color:#fff;
+border:1px solid #333;
+border-radius:18px;
+padding:18px;
+font-size:16px;
+resize:vertical;
+outline:none;
+">
+</textarea>
 
-<input id="telefono" type="tel" placeholder="Tu teléfono">
 
-<label>Dirección</label>
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+margin:25px 0 12px;
+">
 
-<input id="direccion" placeholder="Dirección del trabajo">
+<div style="
+background:#e10600;
+color:white;
+width:32px;
+height:32px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+">
+3
+</div>
 
-<button class="btn" onclick="enviar()">
-ENVIAR SOLICITUD
+<label style="margin:0;font-size:18px;font-weight:900;">
+FOTOS DEL TRABAJO
+</label>
+
+</div>
+
+
+<label class="photo" style="
+display:block;
+background:linear-gradient(145deg,#151719,#0e1011);
+border:1px dashed #666;
+border-radius:18px;
+padding:25px 15px;
+text-align:center;
+cursor:pointer;
+">
+
+<input
+type="file"
+id="fotosInput"
+accept="image/*"
+multiple
+style="display:none"
+onchange="fotos(this)"
+>
+
+<div style="font-size:42px;">
+📷
+</div>
+
+<div style="
+font-size:17px;
+font-weight:900;
+margin-top:8px;
+">
+PULSA AQUÍ PARA AÑADIR FOTOS
+</div>
+
+<div style="
+font-size:13px;
+color:#888;
+margin-top:5px;
+">
+Puedes enviar varias imágenes
+</div>
+
+<span id="photoText" style="display:none;">
+📷 Pulsa aquí para añadir fotos
+</span>
+
+</label>
+
+
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+margin:25px 0 12px;
+">
+
+<div style="
+background:#e10600;
+color:white;
+width:32px;
+height:32px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+">
+4
+</div>
+
+<label style="margin:0;font-size:18px;font-weight:900;">
+TUS DATOS
+</label>
+
+</div>
+
+
+<div style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+">
+
+<input
+id="nombre"
+placeholder="👤  Tu nombre *"
+style="
+width:100%;
+box-sizing:border-box;
+background:#151719;
+color:#fff;
+border:1px solid #333;
+border-radius:16px;
+padding:17px;
+font-size:16px;
+">
+
+<input
+id="telefono"
+type="tel"
+placeholder="📞  Tu teléfono *"
+style="
+width:100%;
+box-sizing:border-box;
+background:#151719;
+color:#fff;
+border:1px solid #333;
+border-radius:16px;
+padding:17px;
+font-size:16px;
+">
+
+</div>
+
+
+<input
+id="direccion"
+placeholder="📍  Dirección (Córdoba y alrededores) *"
+style="
+width:100%;
+box-sizing:border-box;
+margin-top:12px;
+background:#151719;
+color:#fff;
+border:1px solid #333;
+border-radius:16px;
+padding:17px;
+font-size:16px;
+">
+
+
+<button
+class="btn"
+onclick="enviar()"
+style="
+width:100%;
+margin-top:20px;
+background:linear-gradient(135deg,#ff1208,#d90000);
+color:white;
+border:0;
+border-radius:18px;
+padding:20px;
+font-size:17px;
+font-weight:900;
+box-shadow:0 8px 25px rgba(225,0,0,.25);
+">
+📲 ENVIAR SOLICITUD POR WHATSAPP
 </button>
 
-<div class="note">
-Nos pondremos en contacto contigo para confirmar los detalles del trabajo.
+
+<div style="
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:8px;
+margin-top:25px;
+padding-top:18px;
+border-top:1px solid #292929;
+text-align:center;
+color:#aaa;
+font-size:11px;
+">
+
+<div>◷<br>Respuesta<br>rápida</div>
+
+<div>🛡️<br>Profesionales<br>cualificados</div>
+
+<div>📍<br>Córdoba y<br>alrededores</div>
+
+<div>🤝<br>Tu hogar<br>en buenas manos</div>
+
 </div>
 
 </section>
+  
+
+
+
+
+
+
 
 <footer>
 VNO Reformas Multiservicios
