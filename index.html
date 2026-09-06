@@ -790,6 +790,7 @@ function abrirTarifas(nombre) {
   if (!lista) return;
 
   const pantalla = document.createElement("div");
+  pantalla.id = "pantallaTarifas";
   pantalla.style.cssText =
     "position:fixed;inset:0;z-index:9999;overflow:auto;" +
     "background:#0b0b0b;color:#fff;padding:25px 18px 40px;" +
@@ -862,6 +863,8 @@ function abrirTarifas(nombre) {
     
     
 function abrirServicio(){
+  const tarifas = document.getElementById("pantallaTarifas");
+if (tarifas) tarifas.remove();
   const app = document.querySelector(".app");
 
   if (app) {
